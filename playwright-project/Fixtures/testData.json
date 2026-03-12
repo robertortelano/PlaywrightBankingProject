@@ -1,0 +1,23 @@
+{
+  "username": {
+    "validUser1": "Harry Potter",
+    "validUser2": "Ron Weasly",
+    "validUser3": "Hermoine Granger"
+  },
+  "deposit": {
+    "amount1": 100,
+    "amount2": 200,
+    "amount3": 500,
+    "invalid1": "100e",
+    "invalid2": "!00"
+  },
+  "withdraw": {
+    "amount1": 100,
+    "amount2": 150,
+    "amount3": 250
+  },
+  "type": {
+    "credit": "Credit",
+    "debit": "Debit"
+  }
+}
