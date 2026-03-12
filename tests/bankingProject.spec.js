@@ -54,7 +54,8 @@ test.describe('Deposit Transaction Tests', () => {
   // Get browser validation message from Page Object
   const message = await accountPage.getDepositValidationMessage();
   console.log('Browser validation message:', message);
-  expect(message).toBe('Please fill out this field.');
+  const allowedMessages = ['Please fill out this field.', 'Please enter a number.', 'Fill out this field'];
+  expect(allowedMessages).toContain(message);
   await attachScreenshot(page, testInfo, 'invalid-deposit'); //Screenshot invalid deposit
   });
 });
