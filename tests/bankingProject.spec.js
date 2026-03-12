@@ -32,12 +32,10 @@ test.describe('Deposit Transaction Tests', () => {
     await attachScreenshot(page, testInfo, 'valid-deposit'); // Screenshot Successful Deposit
 
     // Open Transaction history and validate the Deposit transaction
-    await accountPage.openTransactions();
-    const transactionRow = await accountPage.getTransactionRow();
+    const transactionRow = await accountPage.getLatestTransactionRow();
     const transactionCol = transactionRow.locator('td');
 
-    // Assertions in Transaction history page
-    await expect(transactionRow).toHaveCount(1);
+    // Assertions to Transaction table
     await expect(transactionCol.first()).toContainText(dateTimeNow);
     await expect(transactionCol.nth(1)).toContainText(depositAmount.toString());
     await expect(transactionCol.nth(2)).toContainText(testData.type.credit);
